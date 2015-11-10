@@ -2,14 +2,19 @@
 
 import React, { PropTypes, Component } from 'react';
 import styles from './App.css';
+import bootstrap from '../../public/bootstrap/css/bootstrap.min.css';
 import withContext from '../../decorators/withContext';
 import withStyles from '../../decorators/withStyles';
 import Header from '../Header';
-import Feedback from '../Feedback';
 import Footer from '../Footer';
+import Search from '../Search';
+import SearchResult from '../SearchResult';
 
 @withContext
+@withStyles(bootstrap)
 @withStyles(styles)
+
+
 class App extends Component {
 
   static propTypes = {
@@ -22,7 +27,6 @@ class App extends Component {
       <div>
         <Header />
         {this.props.children}
-        <Feedback />
         <Footer />
       </div>
     ) : this.props.children;
